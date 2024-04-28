@@ -234,6 +234,12 @@ class _TimePickerSpinnerPopUpState extends State<TimePickerSpinnerPopUp>
         iconAssets =
             'packages/time_picker_spinner_pop_up/assets/ic_calendar.png';
         break;
+      case CupertinoDatePickerMode.monthYear:
+        time = DateFormat(widget.timeFormat ?? 'MM/yyyy')
+            .format(_selectedDateTime);
+        iconAssets =
+        'packages/time_picker_spinner_pop_up/assets/ic_calendar.png';
+        break;
     }
 
     return InkWell(
@@ -307,6 +313,9 @@ class _TimePickerSpinnerPopUpState extends State<TimePickerSpinnerPopUp>
               _paddingHorizontal = 50;
               break;
             case CupertinoDatePickerMode.dateAndTime:
+              _paddingHorizontal = 50;
+              break;
+            case CupertinoDatePickerMode.monthYear:
               _paddingHorizontal = 50;
               break;
           }
